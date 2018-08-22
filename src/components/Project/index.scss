@@ -1,0 +1,68 @@
+.logo {
+	width: 140px;
+	height: 40px;
+	background: rgba(255, 255, 255, .2);
+	margin: 12px 24px 12px 0;
+	float: left;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	> a {
+		font-size: 1.5em;
+		color: aliceblue;
+	}
+}
+
+.Project {
+	flex: 1;
+}
+
+.ProjectHeader {
+	background-color: #001529;
+}
+
+.ProjectName {
+	color: #fff;
+	> span {
+		// margin: 0 1em 0;
+		font-weight: bold;
+		font-size: 1.5em;
+	}
+	> span:first-child {
+		color: rgb(180, 178, 178);
+	}
+}
+
+.ProjectContent {
+	width: 100%; 
+	overflow: auto;  
+	padding: 1em 50px 0;
+}
+
+.ProjectProfile {
+	width: 100%;
+	display: flex;
+	padding: 1em;
+	background-color: #f0f2f5e0;
+	border: rgb(221, 221, 221) solid 1px;
+	min-height: calc(50px + 2em);
+	> img {
+		width: 50px;
+		height: 50px;
+	}
+	> div {
+		flex: 3;
+		margin-left: 1em;
+	}
+}
+
+.ProjectDetail {
+	width: 100%; 
+	padding: 1em;
+  margin-top: 1em;
+  margin-bottom: 1em;
+	background-color: #f0f2f5e0;
+	border: rgb(221, 221, 221) solid 1px; 
+}

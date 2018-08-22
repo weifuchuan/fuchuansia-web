@@ -1,0 +1,49 @@
+.ProjectComp {
+	border: 1px solid #aaaaaa;
+	box-shadow: #aaaaaa;
+	display: flex;
+	min-width: 200px;
+	max-width: 400px;
+	height: 200px;
+	background-color: #f0f2f5;
+	cursor: pointer;
+
+	> div:first-child {
+		align-self: center;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex: 3;
+
+		> img {
+			width: 100%;
+		}
+	}
+
+	> div:nth-child(2) {
+		display: flex;
+		flex-direction: column;
+		flex: 7;
+		border-left: #ebe8e8 solid 1px;
+
+		> div:first-child {
+			border-bottom: #ebe8e8 solid 1px;
+			color: #000000;
+			padding: 4px;
+			font-size: 24px;
+		}
+
+		> div:nth-child(2) {
+			overflow: hidden;
+			color: #464040;
+			font-size: 16px;
+			padding: 4px;
+		}
+	}
+}
+
+.ProjectComp:hover, .SelectedProjectComp {
+	background-color: #bfdce7; 
+	box-shadow: 0px 0px 2em #a3b7dd;
+}
+
