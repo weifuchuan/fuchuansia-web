@@ -1,7 +1,7 @@
 import React, { FormEvent } from 'react';
 import { inject, observer } from 'mobx-react';
 import { observable, action, runInAction } from 'mobx';
-import { Input, Layout, Menu, Tabs, Icon, Upload, Spin, message } from 'antd';
+import { Input, Layout, Menu, Tabs, Icon, Upload, Spin, message, InputNumber } from 'antd';
 import { Button } from 'antd';
 import './index.scss';
 import BraftEditor from 'braft-editor';
@@ -15,6 +15,7 @@ export default class Admin extends React.Component {
 	@observable token: string = '';
 	@observable name: string = '';
 	@observable icon: string = '';
+	@observable order: number = 0;
 	@observable profileHtml: string = '';
 	@observable detailHtml: string = '';
 	@observable updating: boolean = false;
@@ -76,6 +77,13 @@ export default class Admin extends React.Component {
 									placeholder={'name'}
 									value={this.name}
 									onInput={(e: any) => (this.name = e.target.value)}
+								/>
+								<InputNumber
+									placeholder={'order'}
+									defaultValue={0}
+									onChange={(e: any) => {
+										this.order = Number.parseInt(e.target.value);
+									}}
 								/>
 								<div>
 									<BraftEditor
@@ -281,7 +289,8 @@ export default class Admin extends React.Component {
 					name: this.name,
 					icon: this.icon,
 					profile: this.profileHtml,
-					detail: this.detailHtml
+					detail: this.detailHtml,
+					order: this.order
 				})
 			})).json();
 			if (resp.result === 'ok') {
