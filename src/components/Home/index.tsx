@@ -2,14 +2,21 @@ import * as React from 'react';
 import './index.scss';
 import { Layout, Menu, Spin } from 'antd';
 import { inject, observer } from 'mobx-react';
-import { Store } from 'src/store';
+import { Store } from '../../store';
+import { observable } from 'mobx';
 import loadable from 'react-loadable';
+import loadablezation from '../kit';
 const { Header, Footer } = Layout;
 
 const LoadableTrainingGround = loadable({
 	loader: () => import('../TrainingGround/index'),
 	loading: () => <Spin />,
-	delay: 300,
+	delay: 300
+});
+const LoadableBlog = loadable({
+	loader: () => import('../Blog/index'),
+	loading: () => <Spin />,
+	delay: 300
 });
 
 interface Props {
@@ -19,6 +26,8 @@ interface Props {
 @inject('store')
 @observer
 export default class Home extends React.Component<Props> {
+	@observable selectKey: '1' | '2' = '2';
+
 	render() {
 		return (
 			<Layout style={{ width: '100%' }}>
@@ -26,30 +35,20 @@ export default class Home extends React.Component<Props> {
 					<div className="logo">
 						<a href="http://fuchuansia.cn">fuchuansia.cn</a>
 					</div>
-					<Menu theme="dark" mode="horizontal" defaultSelectedKeys={[ '1' ]} style={{ lineHeight: '64px' }}>
+					<Menu
+						theme="dark"
+						mode="horizontal"
+						defaultSelectedKeys={[ this.selectKey ]}
+						selectedKeys={[ this.selectKey ]}
+						style={{ lineHeight: '64px' }}
+						onSelect={(params) => (this.selectKey = params.key as any)}
+					>
 						<Menu.Item key="1">训练场</Menu.Item>
+						<Menu.Item key="2">博客</Menu.Item>
 					</Menu>
 				</Header>
-				{/* <div>
-					<Route
-						loadComponent={(cb: any) =>
-							import('src/components/TrainingGround')
-								.then((C) => {
-									cb(C.default);
-									console.log('fuck');
-								})
-								.catch((err) => console.error(err))}
-						path={'/home/tg'}
-					/>
-					<Route path={'/home/fuck'} component={() => <span>fuck</span>} />
-				</div> */}
-				<LoadableTrainingGround />
-				<Footer style={{ textAlign: 'center' }}>fuchuansia.cn ©2018 Created by fuchuan</Footer>
+				{this.selectKey === '1' ? <LoadableTrainingGround /> : <LoadableBlog />}
 			</Layout>
 		);
-	}
-
-	componentDidMount() {
-		// if (Control.path === '/home') Control.go('/home/tg');
 	}
 }

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { observer } from 'mobx-react';
-import { Project } from 'src/store';
+import { Project } from '../../store';
 import './ProjectComp.scss';
 
 interface Props {

@@ -1,0 +1,96 @@
+.article {
+	background-color: #dae0e6;
+	flex: 1;
+	display: flex;
+	flex-direction: row; 
+
+	> div:nth-child(1) {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		overflow: auto;
+		height: 100%;
+		width: 100%;
+		flex: 1;
+
+		> div:nth-child(1) {
+			width: 100%;
+			max-width: 46.25rem;
+			margin: 0 auto;
+			font: 300 1em/1.8 PingFang SC, Lantinghei SC, Microsoft Yahei, Hiragino Sans GB, Microsoft Sans Serif,
+				WenQuanYi Micro Hei, Helvetica, sans-serif;
+
+			> div:nth-child(1) {
+				padding: 1.25rem 1.375rem;
+				margin-bottom: 52px;
+
+				display: flex;
+				flex-direction: column;
+
+			}
+		}
+
+		
+		@media (min-width: 740px) {
+			width: 740px;
+		}
+
+		@media (max-width: 740px) and (min-width: 500px) {
+			width: calc(100vw - 100px);
+		}
+
+		@media (max-width: 500px) {
+			width: 100vw;
+		}
+	}
+}
+
+.title {
+	color: #353535;
+	font-weight: 400;
+	line-height: 1.65rem;
+	font-size: 1.34375rem;
+}
+
+.create-at {
+	color: #888;
+	font-size: .9375rem;
+	margin-top: 1.0625rem;
+	> span {
+		color: #888;
+		font-size: .9375rem;
+		margin-top: 1.0625rem;
+	}
+}
+
+.content {
+	font-weight: 400;
+	color: #353535;
+	line-height: 1.75rem;
+	white-space: normal;
+	word-break: normal;
+	font-size: 1rem;
+	margin-top: 1.0625rem;
+	width: 100%;
+
+	> div {
+		word-wrap: break-word;
+		word-break: normal;
+
+		p {
+			margin-bottom: 1rem;
+			font-weight: 400;
+			color: #353535;
+			margin-top: .15rem;
+		}
+
+		h1 {
+			margin-top: 1.2em;
+			margin-bottom: .6em;
+			line-height: 1.35;
+			font-weight: 500;
+			font-size: 1.125rem;
+			margin-bottom: .45rem;
+		}
+	}
+}

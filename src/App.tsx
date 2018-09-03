@@ -15,10 +15,15 @@ class App extends React.Component {
 						<Route
 							path={'/home'}
 							loadComponent={(cb: any) => import('./components/Home').then((C) => cb(C.default))}
+							cache 
 						/>
 						<Route
 							path={'/project/:id>'}
 							loadComponent={(cb: any) => import('./components/Project').then((C) => cb(C.default))}
+						/>
+						<Route
+							path={'/article/:id>'}
+							loadComponent={(cb: any) => import('./components/Article').then((C) => cb(C.default))}
 						/>
 						<Route
 							path={'/admin'}

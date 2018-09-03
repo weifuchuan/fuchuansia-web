@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { Store } from 'src/store';
-import { Project as ProjectModel } from 'src/store';
+import { Store } from '../../store';
+import { Project as ProjectModel } from '../../store';
 import './index.scss';
 import { inject, observer } from 'mobx-react';
 import { Layout } from 'antd';

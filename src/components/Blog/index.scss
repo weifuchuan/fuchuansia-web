@@ -1,0 +1,46 @@
+.Content {
+	width: 100%;
+	height: calc(100% - 64px);
+}
+
+.Layout {
+	width: 100%;
+	height: 100%;
+}
+
+.trigger {
+	font-size: 18px;
+	line-height: 64px;
+	padding: 0 24px;
+	cursor: pointer;
+	transition: color .3s;
+}
+
+.trigger:hover {
+	color: #1890ff;
+}
+
+.Article {
+	cursor: pointer;
+	position: relative;
+	:hover {
+		background-color: rgb(240, 242, 245);
+	}
+}
+
+.OverListItem {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+}
+
+.Name{
+  font-size: 1.5em; 
+}
+
+.Profile{
+  font-size: 1em; 
+  margin-left: 1em; 
+  color:#808386; 
+}
