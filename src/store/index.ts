@@ -64,5 +64,5 @@ export class Store {
 }
 
 const store = new Store();
-(window as any).store = store;
+// (window as any).store = store;
 export default store;
